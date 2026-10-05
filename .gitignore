@@ -1,15 +1,6 @@
-.env
-.env.*
-!.env.example
-node_modules/
-.venv/
-__pycache__/
-target/
-dist/
-build/
-*.log
-.claude/
-.cc-workbench/
-轨迹/
-录屏/
-视频/
+# 构建产物与运行时数据
+backend/target/
+backend/wastebags.db*
+frontend/node_modules/
+# 前端构建产物（由 start.sh 重新生成）
+backend/src/main/resources/META-INF/resources/

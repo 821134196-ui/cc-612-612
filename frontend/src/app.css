@@ -1,0 +1,109 @@
+:root {
+  --primary: #1668dc;
+  --primary-dark: #0e4fad;
+  --ok: #16a34a;
+  --warn: #b45309;
+  --warn-bg: #fef3c7;
+  --err: #dc2626;
+  --ink: #1f2937;
+  --muted: #6b7280;
+  --line: #e5e7eb;
+  --bg: #f3f4f6;
+  --card: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+}
+
+#app { min-height: 100vh; }
+
+button {
+  font: inherit;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 18px;
+  background: var(--primary);
+  color: #fff;
+  cursor: pointer;
+  min-height: 44px;
+}
+button:active { background: var(--primary-dark); }
+button:disabled { background: #9ca3af; cursor: not-allowed; }
+button.ghost { background: #eef2ff; color: var(--primary); }
+button.danger { background: var(--err); }
+button.small { padding: 6px 12px; min-height: 34px; font-size: 14px; border-radius: 8px; }
+
+input, select, textarea {
+  font: inherit;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  min-height: 44px;
+}
+input:focus, select:focus { outline: 2px solid var(--primary); outline-offset: -1px; }
+
+label { display: block; font-size: 14px; color: var(--muted); margin: 12px 0 6px; }
+
+.card {
+  background: var(--card);
+  border-radius: 14px;
+  padding: 16px;
+  margin: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.row { display: flex; gap: 10px; align-items: center; }
+.row > * { flex: 1; }
+.row .shrink { flex: 0 0 auto; }
+
+.muted { color: var(--muted); font-size: 13px; }
+.money { font-variant-numeric: tabular-nums; font-weight: 600; }
+
+.chip {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  background: #e5e7eb;
+  color: #374151;
+}
+.chip.OPEN { background: #dbeafe; color: #1d4ed8; }
+.chip.SETTLED { background: var(--warn-bg); color: var(--warn); }
+.chip.PAID { background: #dcfce7; color: var(--ok); }
+.chip.ISSUED { background: #dbeafe; color: #1d4ed8; }
+.chip.RETURNED { background: #e5e7eb; color: #374151; }
+.chip.CLEARED { background: #dcfce7; color: var(--ok); }
+.chip.LOST { background: #fee2e2; color: var(--err); }
+
+table.list {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+table.list th, table.list td {
+  text-align: left;
+  padding: 8px 6px;
+  border-bottom: 1px solid var(--line);
+}
+table.list th { color: var(--muted); font-weight: 500; font-size: 13px; }
+
+.error-box {
+  background: #fee2e2;
+  color: var(--err);
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin: 10px 12px;
+  font-size: 14px;
+  white-space: pre-wrap;
+}
